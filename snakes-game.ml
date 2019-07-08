@@ -1,13 +1,22 @@
+(*
+  We are going to create functions for implementing the Snake Game. The snake can move up, down, left and right. It has
+  the objective od reaching the rat/mouse and eating it. Once you eat the rat/mouse, chase the next one. Be careful not
+  to touch the walls or yourself or the game will end.
+*)
+
+(* Take in a list of tuples and return the tail of the list *)
 let select_tail l = 
     match l with
     | []      -> []
     | _::tail -> tail
 
+(* Take in a list of tuples and return that list reversed *)
 let rec reverse_list l =
     match l with
     | []         -> []
     | head::tail -> (reverse_list tail) @ [head]
 
+(* Take a tuple and print each element - first then second  - separated by semicolon *)
 let display_location (x,y) = 
     print_endline (string_of_int x ^ ";" ^ string_of_int y);;
 
